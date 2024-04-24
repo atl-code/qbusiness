@@ -1,0 +1,22 @@
+[
+  {
+    "category": "function",
+    "resourceName": "newlambda",
+    "service": "Lambda"
+  },
+  {
+    "category": "auth",
+    "resourceName": "qamplify",
+    "service": "Cognito"
+  },
+  {
+    "category": "api",
+    "resourceName": "api7c358ab5",
+    "service": "API Gateway"
+  },
+  {
+    "category": "hosting",
+    "resourceName": "amplifyhosting",
+    "service": "amplifyhosting"
+  }
+]
