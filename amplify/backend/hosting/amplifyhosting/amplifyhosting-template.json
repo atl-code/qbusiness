@@ -21,5 +21,17 @@
         "manual"
       ]
     }
+  },
+  "Resources": {
+    "AmplifyBranch": {
+      "Condition": "isManual",
+      "Type": "AWS::Amplify::Branch",
+      "Properties": {
+        "BranchName": "test",
+        "AppId": {
+          "Ref": "appId"
+        }
+      }
+    }
   }
 }
