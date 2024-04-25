@@ -8,7 +8,7 @@
             "Arn"
           ],
           "category": "function",
-          "resourceName": "newlambda"
+          "resourceName": "qamplifyc5a27f43"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -43,6 +43,11 @@
   },
   "function": {
     "newlambda": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "qamplifyc5a27f43": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"

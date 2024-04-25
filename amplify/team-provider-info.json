@@ -17,7 +17,8 @@
         "newlambda": {
           "deploymentBucketName": "amplify-qamplify-dev-12259-deployment",
           "s3Key": "amplify-builds/newlambda-54726a796e3668597461-build.zip"
-        }
+        },
+        "qamplifyc5a27f43": {}
       },
       "auth": {
         "qamplify": {}

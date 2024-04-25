@@ -3,18 +3,9 @@
   "paths": {
     "/hello": {
       "name": "/hello",
-      "lambdaFunction": "newlambda",
+      "lambdaFunction": "qamplifyc5a27f43",
       "permissions": {
-        "setting": "protected",
-        "auth": [
-          "create",
-          "read",
-          "update",
-          "delete"
-        ],
-        "guest": [
-          "read"
-        ]
+        "setting": "open"
       }
     }
   }
