@@ -8,7 +8,7 @@
             "Arn"
           ],
           "category": "function",
-          "resourceName": "qamplifyc5a27f43"
+          "resourceName": "qbiz"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -42,8 +42,9 @@
     }
   },
   "function": {
-    "qamplifyc5a27f43": {
+    "qbiz": {
       "build": true,
+      "dependsOn": [],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
@@ -56,6 +57,30 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_qbiz_appId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "qbiz"
+        }
+      ]
+    },
+    "AMPLIFY_function_qbiz_ddbRegion": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "qbiz"
+        }
+      ]
+    },
+    "AMPLIFY_function_qbiz_ddbTable": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "qbiz"
+        }
+      ]
+    },
     "AMPLIFY_hosting_amplifyhosting_appId": {
       "usedBy": [
         {

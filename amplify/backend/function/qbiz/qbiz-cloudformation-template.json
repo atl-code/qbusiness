@@ -17,6 +17,25 @@
             "Type": "String"
         }
         
+        ,
+        "ddbRegion": {
+            "Type": "String"
+        }
+        
+        ,
+        "ddbTable": {
+            "Type": "String"
+        }
+        
+        ,
+        "appId": {
+            "Type": "String"
+        }
+        
+        
+        
+    
+    
     
     },
     "Conditions": {
@@ -49,13 +68,13 @@
             "FunctionName": {
                 "Fn::If": [
                     "ShouldNotCreateEnvResources",
-                    "qamplifyc5a27f43",
+                    "qbiz",
                     {
 
                         "Fn::Join": [
                             "",
                             [
-                                "qamplifyc5a27f43",
+                                "qbiz",
                                 "-",
                                 {
                                     "Ref": "env"
@@ -66,11 +85,11 @@
                 ]
             },
             "Environment": {
-                "Variables" : {"ENV":{"Ref":"env"},"REGION":{"Ref":"AWS::Region"}}
+                "Variables" : {"ENV":{"Ref":"env"},"REGION":{"Ref":"AWS::Region"},"DDBRegion":{"Ref":"ddbRegion"},"DDBTable":{"Ref":"ddbTable"},"AppID":{"Ref":"appId"}}
             },
             "Role": { "Fn::GetAtt": ["LambdaExecutionRole", "Arn"] },
-            "Runtime": "nodejs18.x",
-            "Layers": [],
+            "Runtime": "python3.8",
+            "Layers": ["arn:aws:lambda:us-west-2:294158496994:layer:boto3ext:1"],
             "Timeout": 25
           }
         },
@@ -80,13 +99,13 @@
                 "RoleName": {
                     "Fn::If": [
                         "ShouldNotCreateEnvResources",
-                        "qamplifyLambdaRolecc66cb84",
+                        "qamplifyLambdaRoledceedc9c",
                         {
 
                             "Fn::Join": [
                                 "",
                                 [
-                                    "qamplifyLambdaRolecc66cb84",
+                                    "qamplifyLambdaRoledceedc9c",
                                     "-",
                                     {
                                         "Ref": "env"

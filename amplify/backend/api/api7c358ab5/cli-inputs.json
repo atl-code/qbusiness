@@ -3,9 +3,15 @@
   "paths": {
     "/hello": {
       "name": "/hello",
-      "lambdaFunction": "qamplifyc5a27f43",
+      "lambdaFunction": "qbiz",
       "permissions": {
-        "setting": "open"
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
       }
     }
   }
