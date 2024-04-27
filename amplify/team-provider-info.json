@@ -14,11 +14,7 @@
     },
     "categories": {
       "function": {
-        "qbiz": {
-          "ddbRegion": "us-west-2",
-          "ddbTable": "qbiz_convs",
-          "appId": "c69de2c9-3561-4c69-9714-73f150233230"
-        }
+        "qbiz": {}
       },
       "auth": {
         "qamplify": {}

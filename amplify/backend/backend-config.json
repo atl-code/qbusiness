@@ -73,30 +73,6 @@
     }
   },
   "parameters": {
-    "AMPLIFY_function_qbiz_appId": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "qbiz"
-        }
-      ]
-    },
-    "AMPLIFY_function_qbiz_ddbRegion": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "qbiz"
-        }
-      ]
-    },
-    "AMPLIFY_function_qbiz_ddbTable": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "qbiz"
-        }
-      ]
-    },
     "AMPLIFY_hosting_amplifyhosting_appId": {
       "usedBy": [
         {

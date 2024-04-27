@@ -5,18 +5,5 @@
       "arn": "arn:aws:lambda:us-west-2:294158496994:layer:boto3ext:1"
     }
   ],
-  "environmentVariableList": [
-    {
-      "cloudFormationParameterName": "ddbRegion",
-      "environmentVariableName": "DDBRegion"
-    },
-    {
-      "cloudFormationParameterName": "ddbTable",
-      "environmentVariableName": "DDBTable"
-    },
-    {
-      "cloudFormationParameterName": "appId",
-      "environmentVariableName": "AppID"
-    }
-  ]
+  "environmentVariableList": []
 }

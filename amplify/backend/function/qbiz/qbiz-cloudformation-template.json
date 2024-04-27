@@ -16,15 +16,6 @@
     "s3Key": {
       "Type": "String"
     },
-    "ddbRegion": {
-      "Type": "String"
-    },
-    "ddbTable": {
-      "Type": "String"
-    },
-    "appId": {
-      "Type": "String"
-    },
     "apiapi7c358ab5ApiName": {
       "Type": "String",
       "Default": "apiapi7c358ab5ApiName"
@@ -86,15 +77,6 @@
             },
             "REGION": {
               "Ref": "AWS::Region"
-            },
-            "DDBRegion": {
-              "Ref": "ddbRegion"
-            },
-            "DDBTable": {
-              "Ref": "ddbTable"
-            },
-            "AppID": {
-              "Ref": "appId"
             },
             "API_API7C358AB5_APINAME": {
               "Ref": "apiapi7c358ab5ApiName"
@@ -267,6 +249,14 @@
     "LambdaExecutionRole": {
       "Value": {
         "Ref": "LambdaExecutionRole"
+      }
+    },
+    "LambdaExecutionRoleArn": {
+      "Value": {
+        "Fn::GetAtt": [
+          "LambdaExecutionRole",
+          "Arn"
+        ]
       }
     }
   }
