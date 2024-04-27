@@ -92,7 +92,7 @@
             "Arn"
           ]
         },
-        "Runtime": "python3.8",
+        "Runtime": "python3.12",
         "Layers": [
           "arn:aws:lambda:us-west-2:294158496994:layer:boto3ext:1"
         ],
