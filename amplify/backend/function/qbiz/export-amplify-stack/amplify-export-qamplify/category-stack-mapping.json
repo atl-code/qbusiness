@@ -1,0 +1,27 @@
+[
+  {
+    "category": "api",
+    "resourceName": "api7c358ab5",
+    "service": "API Gateway"
+  },
+  {
+    "category": "auth",
+    "resourceName": "qamplify",
+    "service": "Cognito"
+  },
+  {
+    "category": "auth",
+    "resourceName": "userPoolGroups",
+    "service": "Cognito-UserPool-Groups"
+  },
+  {
+    "category": "function",
+    "resourceName": "qbiz",
+    "service": "Lambda"
+  },
+  {
+    "category": "hosting",
+    "resourceName": "amplifyhosting",
+    "service": "amplifyhosting"
+  }
+]

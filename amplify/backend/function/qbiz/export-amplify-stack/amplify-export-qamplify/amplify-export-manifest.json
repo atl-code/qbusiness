@@ -1,0 +1,107 @@
+{
+  "stackName": "amplify-qamplify-dev-12259",
+  "props": {
+    "templateFile": "root-stack-template.json",
+    "parameters": {
+      "AuthRoleName": "amplify-qamplify-dev-12259-authRole",
+      "UnauthRoleName": "amplify-qamplify-dev-12259-unauthRole",
+      "DeploymentBucketName": "amplify-qamplify-dev-12259-deployment"
+    },
+    "preserveLogicalIds": true,
+    "loadNestedStacks": {
+      "APIGatewayAuthStack": {
+        "templateFile": "auth\\APIGatewayAuthStack.json",
+        "parameters": {
+          "env": "dev"
+        },
+        "preserveLogicalIds": true,
+        "loadNestedStacks": {}
+      },
+      "apiapi7c358ab5": {
+        "templateFile": "api\\api7c358ab5\\api7c358ab5-cloudformation-template.json",
+        "parameters": {
+          "env": "dev"
+        },
+        "preserveLogicalIds": true,
+        "loadNestedStacks": {}
+      },
+      "authqamplify": {
+        "templateFile": "auth\\qamplify\\qamplify-cloudformation-template.json",
+        "parameters": {
+          "identityPoolName": "qamplify_identitypool_41c21ae1",
+          "allowUnauthenticatedIdentities": true,
+          "resourceNameTruncated": "qampli41c21ae1",
+          "userPoolName": "qamplify_userpool_41c21ae1",
+          "autoVerifiedAttributes": [
+            "email"
+          ],
+          "mfaConfiguration": "OFF",
+          "mfaTypes": [
+            "SMS Text Message"
+          ],
+          "smsAuthenticationMessage": "Your authentication code is {####}",
+          "smsVerificationMessage": "Your verification code is {####}",
+          "emailVerificationSubject": "Your verification code",
+          "emailVerificationMessage": "Your verification code is {####}",
+          "defaultPasswordPolicy": false,
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": [],
+          "requiredAttributes": [
+            "email"
+          ],
+          "aliasAttributes": [],
+          "userpoolClientGenerateSecret": false,
+          "userpoolClientRefreshTokenValidity": 30,
+          "userpoolClientWriteAttributes": [
+            "email"
+          ],
+          "userpoolClientReadAttributes": [
+            "email"
+          ],
+          "userpoolClientLambdaRole": "qampli41c21ae1_userpoolclient_lambda_role",
+          "userpoolClientSetAttributes": false,
+          "authSelections": "identityPoolAndUserPool",
+          "resourceName": "qamplify",
+          "sharedId": "41c21ae1",
+          "serviceName": "Cognito",
+          "useDefault": "manual",
+          "breakCircularDependency": true,
+          "useEnabledMfas": true,
+          "dependsOn": [],
+          "userPoolGroupList": [
+            "qamplify2"
+          ],
+          "env": "dev"
+        },
+        "preserveLogicalIds": true,
+        "loadNestedStacks": {}
+      },
+      "authuserPoolGroups": {
+        "templateFile": "auth\\userPoolGroups\\userPoolGroups-cloudformation-template.json",
+        "parameters": {
+          "env": "dev"
+        },
+        "preserveLogicalIds": true,
+        "loadNestedStacks": {}
+      },
+      "functionqbiz": {
+        "templateFile": "function\\qbiz\\qbiz-cloudformation-template.json",
+        "parameters": {
+          "env": "dev"
+        },
+        "preserveLogicalIds": true,
+        "loadNestedStacks": {}
+      },
+      "hostingamplifyhosting": {
+        "templateFile": "hosting\\amplifyhosting\\amplifyhosting-template.json",
+        "parameters": {
+          "appId": "d1swgv55em951e",
+          "type": "manual",
+          "env": "dev"
+        },
+        "preserveLogicalIds": true,
+        "loadNestedStacks": {}
+      }
+    }
+  }
+}

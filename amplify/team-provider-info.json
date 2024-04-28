@@ -17,7 +17,8 @@
         "qbiz": {}
       },
       "auth": {
-        "qamplify": {}
+        "qamplify": {},
+        "userPoolGroups": {}
       },
       "api": {
         "api7c358ab5": {}

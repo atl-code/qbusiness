@@ -1,0 +1,109 @@
+{
+  "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"Amplify\",\"createdWith\":\"12.11.1\",\"stackType\":\"auth-Cognito-UserPool-Groups\",\"metadata\":{}}",
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Parameters": {
+    "env": {
+      "Type": "String"
+    },
+    "AuthRoleArn": {
+      "Type": "String"
+    },
+    "UnauthRoleArn": {
+      "Type": "String"
+    },
+    "authqamplifyUserPoolId": {
+      "Type": "String",
+      "Default": "authqamplifyUserPoolId"
+    },
+    "authqamplifyIdentityPoolId": {
+      "Type": "String",
+      "Default": "authqamplifyIdentityPoolId"
+    },
+    "authqamplifyAppClientID": {
+      "Type": "String",
+      "Default": "authqamplifyAppClientID"
+    },
+    "authqamplifyAppClientIDWeb": {
+      "Type": "String",
+      "Default": "authqamplifyAppClientIDWeb"
+    }
+  },
+  "Conditions": {
+    "ShouldNotCreateEnvResources": {
+      "Fn::Equals": [
+        {
+          "Ref": "env"
+        },
+        "NONE"
+      ]
+    }
+  },
+  "Resources": {
+    "qamplify2Group": {
+      "Type": "AWS::Cognito::UserPoolGroup",
+      "Properties": {
+        "UserPoolId": {
+          "Ref": "authqamplifyUserPoolId"
+        },
+        "Description": "override success",
+        "GroupName": "qamplify2",
+        "Precedence": 1,
+        "RoleArn": {
+          "Fn::GetAtt": [
+            "qamplify2GroupRole",
+            "Arn"
+          ]
+        }
+      }
+    },
+    "qamplify2GroupRole": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "",
+              "Effect": "Allow",
+              "Principal": {
+                "Federated": "cognito-identity.amazonaws.com"
+              },
+              "Action": "sts:AssumeRoleWithWebIdentity",
+              "Condition": {
+                "StringEquals": {
+                  "cognito-identity.amazonaws.com:aud": {
+                    "Ref": "authqamplifyIdentityPoolId"
+                  }
+                },
+                "ForAnyValue:StringLike": {
+                  "cognito-identity.amazonaws.com:amr": "authenticated"
+                }
+              }
+            }
+          ]
+        },
+        "RoleName": {
+          "Fn::Join": [
+            "",
+            [
+              {
+                "Ref": "authqamplifyUserPoolId"
+              },
+              "-qamplify2GroupRole"
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "Outputs": {
+    "qamplify2GroupRole": {
+      "Value": {
+        "Fn::GetAtt": [
+          "qamplify2GroupRole",
+          "Arn"
+        ]
+      }
+    }
+  }
+}
